@@ -30,10 +30,6 @@
 
 
 
--- Вопрос: Зачем в условии указывать, что от точек 0,0 еще отсчитываем 50 клеток?
--- Зачем нужны локальные и глобальные функции local function
-
-
 print("Enter robot's position")
 local r_x = assert(tonumber(io.read('*l')), 'Need number!')
 local r_y = assert(tonumber(io.read('*l')), 'Need number!')
