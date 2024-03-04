@@ -1,6 +1,7 @@
 -- Программа запрашивает радиус круга R и его координаты (x, y). Найти количество точек с целочисленными координатами,
 -- которые попадают в этот круг.
 
+local k = 0
 print("Введите радиус круга")
 local r = assert(tonumber(io.read('*l')), 'Need number!')
 
@@ -11,12 +12,13 @@ print("Введите координату у")
 local y = assert(tonumber(io.read('*l')), 'Need number!')
 
 
-local points = (x ^ 2 + y ^ 2) *(x ^ 2 + y ^ 2)
 
-if points <= r then
-    print("Точка принадлежит кругу")
-else
-    print("Точка НЕ принадлежит кругу")
+k = 0
+for x = -r, r do
+    for y = -r, r do
+        if x^2 + y^2 <= r^2 then
+            k = k + 1
+        end
+    end
 end
-
--- пересмотреть 
+io.write('число точек в круге: ', k)
