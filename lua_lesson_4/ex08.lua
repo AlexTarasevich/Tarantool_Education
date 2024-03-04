@@ -4,25 +4,23 @@
 
 
 -- Простой вывод на экран
--- print("Введите первое число")
--- local n = assert(tonumber(io.read('*l')), 'Need number!')
+print("Введите первое число")
+local n = assert(tonumber(io.read('*l')), 'Need number!')
 
--- for i = 1, n do
-   
---     io.write(i .. "+")
--- end
--- io.write("\b") -- делает возврат на один символ
+for i = 1, n do
+   io.write(i .. "+")
+end
+io.write("\b") -- делает возврат на один символ
 
 
 -- Вывод на экран с решением
--- print("Введите первое число")
--- local n = assert(tonumber(io.read('*l')), 'Need number!')
+print("Введите первое число")
+local n = assert(tonumber(io.read('*l')), 'Need number!')
 
--- local sum = 0
+local sum = 0
 
--- for i = 1, n do
-    
---    io.write(i .. " + ")
---    sum = sum + i
--- end
--- io.write("\b = " .. sum)
+for i = 1, n do
+    io.write(i .. " + ")
+   sum = sum + i
+end
+io.write("\b = " .. sum)
