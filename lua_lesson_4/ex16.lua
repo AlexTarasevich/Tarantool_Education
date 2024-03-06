@@ -2,6 +2,7 @@
 
 
 local minValue = math.huge
+-- math.huge - Вещественное значение, которое больше любого другого числового значения.
 
 for x = -2, 2, 0.0001 do
     local y = x * x + x + 1
