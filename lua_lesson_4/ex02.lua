@@ -25,7 +25,7 @@ local i = 0
 repeat
     print(i)
     i = i + 1
-until i == 101
+until i > 100
 
 --WHILE LOOP
 local i = 0
@@ -41,9 +41,3 @@ for i = 0, 100 do
 end
 
 
---17
--- https://urok.1sept.ru/articles/100219
-
--- https://www.codeconvert.ai/pascal-to-python-converter
-
--- https://www.cyberforum.ru/mathematical-analysis/thread424532.html
