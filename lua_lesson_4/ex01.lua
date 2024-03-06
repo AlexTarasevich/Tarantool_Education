@@ -10,7 +10,8 @@
 -- i = i + 1
 -- print(i)
 
-for i = 0, 3 do
+local i = 0
+for a = 0, 3 do
     i = i + 1
     print(i)
 end
