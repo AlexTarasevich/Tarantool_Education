@@ -2,18 +2,19 @@
 -- суммой предыдущих двух. Таким образом, получаем последовательность 0, 1, 1, 2, 3, 5 и так далее. Программа запрашивает
 -- число N и выводит на экран N-ое число Фибоначчи.
 
-
-
-
+print("Введите число: ")
 local n = assert(tonumber(io.read('*l')), 'Need number!')
-
-local a = 0
-local b = 1
-local c = 0
-
+local a, b = 0, 1
 for i = 1, n do
-    c = a + b
-    a = b
-    b = c
-    print(c)
+    if i == 1 then
+        print("Число Фибонначчи " .. i .. ": " .. a)
+    elseif i == 2 then
+        print("Число Фибонначчи " .. i .. ": " .. b)
+    else
+        local c = a + b
+        print("Число Фибонначчи " .. i .. ": " .. c)
+        a, b = b, c
+    end
 end
+
+
