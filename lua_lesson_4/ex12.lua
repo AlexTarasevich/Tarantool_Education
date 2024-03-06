@@ -1,23 +1,20 @@
 -- Вывести на экран количество четырёхзначных чисел, которые в 600 раз больше суммы своих цифр.
 
 
+local x = 0
 for i = 1000, 9999 do
+    local sum = 0
+    local num = i
+    while num > 0 do
+        local digit = num % 10
+        sum = sum + digit
+        num = math.floor(num / 10)
+    end
 
-    local x1 =i % 1000
-    local z1 = (i - x1) / 1000
-
-    local x2 = x1 % 100
-    local z2 = (x1 - x2) / 100
-
-    local x3 = x1 % 10
-    local z3 = (x2 - x3) / 10
-
-    local z4 = i % 10
-
-    local sum = z1 + z2 + z3 + z4
-
-    if sum * 600  == i then
-       print(i)
+    if i == sum * 600 then
+        x = x + 1
     end
 end
 
+
+print("Колличество чисел: " .. x)
