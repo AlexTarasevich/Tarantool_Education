@@ -15,18 +15,17 @@
 
 
 for i = 100, 999 do
-    
-    local x1 =i % 100
-    local z1 = (i - x1) / 100
+    local sum = 0
 
-    local x2 = x1 % 10
-    local z2 = (x1 - x2) / 10
+   
+    local num = i
+    while num > 0 do
+        local rang = num % 10
+        sum = sum + (rang ^ 3)
+        num = math.floor(num / 10)
+    end
 
-    local z3 = i % 10
-
-    local sum = z1^3 + z2^3 + z3^3
-
-    if sum == i then
+    if i == sum then
         print(i)
     end
 end
