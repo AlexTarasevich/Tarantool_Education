@@ -3,12 +3,8 @@
 print("Введите число N")
 local n = assert(tonumber(io.read('*l')), 'Need number!')
 
-for i = 0, 10000 do
+for i = 1, n do
     if i % n == 0 then
         print(i)
     end
 end
-
-
--- Самое больлше значение integer 9.223.372.036.854.775.807
--- Самое минимальное значение integer - 9.223.372.036.854.775.808
