@@ -2,9 +2,10 @@
 -- же принципу, что и числа Фибоначчи - первое число а, второе число b, каждое последующее число является суммой
 -- предыдудщих двух.
 
-local a = assert(tonumber(io.read('*l')), 'Need number!') -- 10
-local b = assert(tonumber(io.read('*l')), 'Need number!') -- 15
-local n = assert(tonumber(io.read('*l')), 'Need number!') -- 5
+local a = assert(tonumber(io.read("*number")), "invalid input") -- 10
+local b = assert(tonumber(io.read("*number")), "invalid input") -- 15
+local n = assert(tonumber(io.read("*number")), "invalid input") -- 5
+
 
 local c = 0
 
@@ -12,13 +13,11 @@ for i = 1, n do
     c = a + b
     a = b
     b = c
-    print(c)
 end
+print(c)
 
 
--- Задача 18 и 19 из блока 1, подумать без 3-й 
-
-
+-- Подсказка на более простых числах
 -- a  b  c  
 -- 10 15 25 40 65 105 170
 
