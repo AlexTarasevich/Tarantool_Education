@@ -1,34 +1,35 @@
 -- Два числа называются дружественными, если каждое из них равно сумме всех делителей второго не считая самого этого
 -- числа. Программа запрашивает начало и конец диапазона, найти все пары дружественных чисел в этом диапаоне.
 
-local f = 0
 
-print("Введите наименьшее числи диапазона")
-local x1 = assert(tonumber(io.read('*l')), 'Need number!')
-
-print("Введите наибольшее числи диапазона")
-local x2 = assert(tonumber(io.read('*l')), 'Need number!')
+print("Введите начало диапазона: ")
+local start_start = io.read("*n")
+print("Введите конец диапазона: ")
+local star_end = io.read("*n")
 
 
-for ch = x1, x2 do
-    if ch ~= f then
-        local s1 = 0
-    for i = 1, ch / 2 do
-        if ch % i == 0 then
-            s1 = s1 + i
+for i = start_start, star_end do
+    
+    local sum_i = 1
+    for j = 2, math.floor(i / 2) do
+        if i % j == 0 then
+            sum_i = sum_i + j
         end
     end
-    local s2 = 0
-    for j = 1, s1 / 2 do
-        if s1 % j == 0 then
-            s2 = s2 + j
+
+
+    for j = i + 1, star_end do
+        
+        local sum_j = 1
+        for k = 2, math.floor(j / 2) do
+            if j % k == 0 then
+                sum_j = sum_j + k
+            end
         end
-    end
-    if s2 == ch and ch ~= s1 then
-        print(ch, s1)
-        f = s1
+
+
+        if sum_i == j and sum_j == i then
+            print("Дружественные числа: " .. i .. " и " .. j)
         end
     end
 end
-
-
