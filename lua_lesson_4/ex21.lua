@@ -2,28 +2,21 @@
 -- обозначим счастливым. Вывести номера всех счастливых автобусных билетов.
 
 
-for n = 100000, 999999 do
-    local x1 = n % 100000
-    local z1 = (n - x1) / 100000
-    
-    local x2 = x1 % 10000
-    local z2 = (x1 - x2) / 10000
-    
-    local x3 = x1 % 1000
-    local z3 = (x2 - x3) / 1000
- 
-    local x4 = x1 % 100
-    local z4 = (x3 - x4) / 100
- 
-    local x5 = x1 % 10
-    local z5 = (x4 - x5) / 10
- 
-    local z6 = n % 10
- 
-    local sum_1 = z1 + z2 + z3
-    local sum_2 = z4 + z5 + z6
+local num_start = 100000
+local num_end = 999999
 
-    if sum_1 == sum_2 then
-        print(n)
+
+for number = num_start, num_end do
+
+    local first_three = math.floor(number / 1000)
+    local last_three = number % 1000
+
+
+    local sum_first = math.floor(first_three / 100) + math.floor(first_three / 10) % 10 + first_three % 10
+    local sum_last = math.floor(last_three / 100) + math.floor(last_three / 10) % 10 + last_three % 10
+
+
+    if sum_first == sum_last then
+        print("Счастливые билеты : " .. number)
     end
 end
