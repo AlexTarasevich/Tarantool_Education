@@ -3,32 +3,48 @@
 -- часовой стрелке. Робот может делать шаги на север, восток, юг и запад. Первый шаг робот делает на север.
 
 
-print("Game plate 11x11")
-print("Robot position 0x0")
-print("__________")
 
-local max_x = 11
-local max_y = 11
 
-local r_x = 0
-local r_y = 0
 
-local north = 0
-local east = 0
-local south = 0
-local west = 0
+--[[ Логика программы на псевдокоде 
+
+1. Если робот находится на Севере - сделать 1 шаг на Восток. 
+2. Если робот находится на Востоке - сделать 1 шаг на Юг. 
+3. Если робот находится на Юге - сделать 2 шага на Запад. 
+4. Если робот находится на Западе - сделать 2 шага на Север.
+5. Повторить шаги с 1 по 4 и увеличить их значение на 1 
+6. Повторять 5 пункт до максиматльного размера поля
+
+--]]
+
+local steps, count, step_north, step_south, step_east, step_west = 0, 0, 0, 0, 0, 0
+local length = 5
+
+
 
 repeat
+    count = count + 1
 
-    north = north + 1
-    east = east + 1
-    south = south + 1
-    west = west + 1
+    
+    steps = steps + 1
+    step_south = step_south + 1
+        
+    print("Шаг " .. steps .. ": " .. "робот делает " .. step_south .. " шаг на Восток")
+        
+    steps = steps + 1
+    step_east = step_east + 1
+        
+    print("Шаг " .. steps .. ": " .. "робот делает " .. step_east .. " шаг на Юг")
+        
+    steps = steps + 1
+    step_west = step_west + 2
+        
+    print("Шаг " .. steps .. ": " .. "робот делает " .. step_west .. " шаг на Запад")
+        
+    steps = steps + 1
+     step_north = step_north + 2
+        
+    print("Шаг " .. steps .. ": " .. "робот делает " .. step_north .. " шаг на Север")
+        
 
-    print("Сдвинуться на Север, позиция " .. north)
-    print("Сдвинуться на Восток, позиция " .. east)
-    print("Cдвинуться на ЮГ, позиция " .. south)
-    print("Cдвинуться на Запад, позиция " .. west)
-    r_x = r_x + 1
-    r_y = r_y + 1
-until r_x == max_x and r_y == max_y
+until count == length
