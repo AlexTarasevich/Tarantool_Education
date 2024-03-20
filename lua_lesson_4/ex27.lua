@@ -7,43 +7,48 @@
 -- Для генерации случайных чисел использовать функцию math.random(<begin>, <end>).
 
 
-local rocs, gamer_1, gamer_2, a
-local gamer_in_1, gamer_in_2
+
 math.randomseed(os.time())
 
-print("Введите колличество камней")
-rocs = assert(tonumber(io.read('*l')), 'Need number!')
+print("Введите колличество камней:")
+local stones = tonumber(io.read())
 
-a = math.random(1,2) -- если 1 - играет робот, 2 - играет человек
-repeat
+local first_player = math.random(1, 2)
 
+while stones > 0 do
+  if first_player == 1 then
+    print("Выберите сколько камней вы возьмете (1-3):")
+    local stones_taken = tonumber(io.read())
 
-    if a == 1 then -- играет робот
-
-        print("Робот берет камни")
-        gamer_1 = math.random(1, 3)
-        rocs = rocs - gamer_1
-        gamer_in_1 = 1
-        a = 2
-        print("Робот взял " .. gamer_1 .. " камня")
+    if stones_taken < 1 or stones_taken > 3 then
+      print("Не верное количество камней.")
+      os.exit()
     end
 
+    stones = stones - stones_taken
 
-
-    if a == 2 then -- играет человек
-        print("Игрок берет камни. Сколько возмете? Можно только 1, 2 или 3 камня")
-        gamer_2 = assert(tonumber(io.read('*l')), 'Need number!')
-        rocs = rocs - gamer_2
-        gamer_in_2 = 1
-        a = 1
-        print("Второй игрок взял " .. gamer_2 .. " камня")
+    if stones == 0 then
+      print("Игрок проиграл!")
+      os.exit()
     end
 
+    first_player = 2
+  else
 
-until rocs <= 0
+    if stones <= 3 then
+      print("Компьютер берет " .. stones .. " камней.")
+      stones = 0
+    else
+      local stones_taken = math.random(1, 3)
+      print("Компьютер берет " .. stones_taken .. " камней.")
+      stones = stones - stones_taken
+    end
 
-if gamer_in_1 == 1 and rocs <= 0 then
-    print("Проиграл робот")
-elseif gamer_in_2 == 1 and rocs <= 0  then
-    print("Проиграл игрок")
+    if stones == 0 then
+      print("Компьютер проиграл!")
+      os.exit()
+    end
+
+    first_player = 1
+  end
 end
