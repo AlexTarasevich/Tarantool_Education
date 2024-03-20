@@ -3,53 +3,44 @@
 -- Программа запрашивает количество камней, затем поочередно спрашивает игроков, кто сколько камней берёт и в конце
 -- игры выводит результат, кто выиграл.
 
-local rocs, gamer_1, gamer_2
-local gamer_in_1, gamer_in_2
 
 
 
-
-print("Введите колличество камней")
-rocs = assert(tonumber(io.read('*l')), 'Need number!')
-
-
-repeat
-    
-    print("Первый игрок берет камни. Сколько возмете? Можно только 1, 2 или 3 камня")
-    gamer_1 = assert(tonumber(io.read('*l')), 'Need number!')
-
-    -- if gamer_1 > 3  then
-    -- print("Первый игрок взял больше камней чем можно. Возмите правильное число камней")
-    -- -- goto заменить циклы
-    -- end
+print("Введите колличество камней:")
+local stones = tonumber(io.read())
 
 
-    rocs = rocs - gamer_1
-    gamer_in_1 = 1
-    print("Первый игрок взял " .. gamer_1 .. " камня")
+while stones > 0 do
 
+  print("Игрок 1, введите колличество камней (1-3):")
+  local stones_taken = tonumber(io.read())
 
+  if stones_taken < 1 or stones_taken > 3 then
+    print("Неверное число камней введено")
+    os.exit()
+  end
 
+  stones = stones - stones_taken
 
-    print("Второй игрок берет камни. Сколько возмете? Можно только 1, 2 или 3 камня")
-    gamer_2 = assert(tonumber(io.read('*l')), 'Need number!')
+  if stones == 0 then
+    print("Игрок 1 проиграл!")
+    os.exit()
+  end
 
-    -- if gamer_2 > 3 then
-    -- print("Второй игрок взял больше камней чем можно. Возмите правильное число камней")
-    -- end
+  print("Игрок 2, введите колличество камней (1-3):")
+  stones_taken = tonumber(io.read())
 
-    rocs = rocs - gamer_2
-    gamer_in_2 = 1
-    print("Второй игрок взял " .. gamer_2 .. " камня")
+  if stones_taken < 1 or stones_taken > 3 then
+    print("Веверное число камней введено")
+    os.exit()
+  end
 
-    print(rocs)
-until rocs <= 0
+ 
+  stones = stones - stones_taken
 
-
-if gamer_in_1 == 1 and rocs <= 0 then
-    print("Проиграл первый игрок")
-elseif gamer_in_2 == 1 and rocs <= 0  then
-    print("Проиграл второй игрок")
+ 
+  if stones == 0 then
+    print("Игрок 2 проиграл!")
+    os.exit()
+  end
 end
-
--- доделать вывод кто проиграл
