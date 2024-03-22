@@ -4,7 +4,8 @@ print("Введите число N")
 local n = assert(tonumber(io.read('*l')), 'Need number!')
 
 for i = 1, n do
-    if i % n == 0 then
+    if n % i == 0 then
         print(i)
     end
 end
+
