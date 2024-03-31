@@ -2,36 +2,35 @@
 -- в которую надо перевести число N.
 
 print("Введите десятичное число N")
-local n = assert(tonumber(io.read('*l')), 'Need number!')
-
+local decimal =  assert(tonumber(io.read('*l')), 'Need number!')
 
 print("Введите основание системы счисления")
-local sis = assert(tonumber(io.read('*l')), 'Need number!')
+local base =  assert(tonumber(io.read('*l')), 'Need number!')
 
+local converted = ""
 
+while decimal > 0 do
+  local remainder = decimal % base
+  decimal = decimal / base
 
-if sis == 2 then -- из десятичной в двоичную
-    local b = ''
-
-    while n > 0 do
-        b = tostring(n % 2) .. b
-        n = math.floor(n / 2)
+  if remainder >= 10 then
+    if remainder == 10 then
+      converted = "A" .. converted
+    elseif remainder == 11 then
+      converted = "B" .. converted
+    elseif remainder == 12 then
+      converted = "C" .. converted
+    elseif remainder == 13 then
+      converted = "D" .. converted
+    elseif remainder == 14 then
+      converted = "E" .. converted
+    else
+      converted = "F" .. converted
     end
-    print("Двоичное число " .. b)
+  else
 
-
-    elseif sis == 16 then -- из десятичноой в шестнадцатеричную
-
-    local s = ''
-    local h = '0123456789ABCDEF'
-
-    while n > 0 do
-        s = string.sub(h, n % 16 + 1, n % 16 + 1) .. s -- нашел в интернете способ реализации
-        n = math.floor(n / 16)
-    end
-    print(s)
-
+    converted = tostring(remainder) .. converted
+  end
 end
 
---string.sub(S, i, j); -- Возвращает подстроку строки S, которая начинается с символа с индексом i и заканчивается символом с индексом j
-   -- j (необязательный параметр) - по-умолчанию, индекс последнего символа
+print("Итоговое число:  " .. converted)
