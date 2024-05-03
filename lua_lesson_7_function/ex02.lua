@@ -12,7 +12,9 @@ end
 
 local function max(i, j)
     if i < j then
-        return j
+        return i
     end
-    return i
+    return min
 end
+
+-- переделать Выразить как в случае с суммой

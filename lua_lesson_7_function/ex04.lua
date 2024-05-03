@@ -1,7 +1,7 @@
 -- Написать функцию, которая в качестве аргумента принимает произвольное целое положительное число и считает сумму его цифр. 
 -- Подсчёт суммы цифр реализовать итеративным способом.
 
-local n =  assert(tonumber(io.read('*l')), 'Need number!')
+--local n =  assert(tonumber(io.read('*l')), 'Need number!')
 
 function sum_of (n)
     local sum = 0
@@ -13,4 +13,4 @@ function sum_of (n)
     print("Значение функции: " .. sum)
 end
 
-print(sum_of(n))
+print(sum_of(1234))

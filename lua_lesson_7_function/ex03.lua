@@ -1,6 +1,6 @@
 -- Проанализировать функцию из примера с ascii-прямоугольниками и сократить код, выделив еще одну функцию:
 
--- что такое  for _  
+-- _ применяется для того чтобы обозначить переменную, которая не будет использоваться
 
 local function ascii_rectangle(size)
     for i = 1, size do
@@ -23,5 +23,7 @@ local function ascii_rectangle(size)
     io.write('\n')
 end
 
+
+print(ascii_rectangle(5))
 
 

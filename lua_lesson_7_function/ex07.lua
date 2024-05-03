@@ -15,7 +15,7 @@ function find_sum(K)
     return "nil"
 end
 
-print("Число N это: " .. find_sum(20))
+print("Число N это: " .. find_sum(15))
 
 
 -- при 15 вернет 5, а при 20 nil

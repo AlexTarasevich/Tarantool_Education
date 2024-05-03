@@ -25,28 +25,28 @@ print(recurse(1234))
 
 
 -- пример для понимания рекурсии
-function factorial(n)
-    if n == 1 then
-        return 1
-    else 
-        return n * factorial(n -1)
-    end
-end
+-- function factorial(n)
+--     if n == 1 then
+--         return 1
+--     else 
+--         return n * factorial(n -1)
+--     end
+-- end
 
-print(factorial(3))
+-- print(factorial(3))
 
 
--- пример для понимания итеративного процесса
-function factorial_iter(n)
-    local function iter(counter, acc)
-        if counter == 1 then
-            return acc
-        end
-        return iter(counter - 1, counter * acc)
-    end
-    return iter(n, 1)
-end
+-- -- пример для понимания итеративного процесса
+-- function factorial_iter(n)
+--     local function iter(counter, acc)
+--         if counter == 1 then
+--             return acc
+--         end
+--         return iter(counter - 1, counter * acc)
+--     end
+--     return iter(n, 1)
+-- end
 
-print(factorial_iter(3))
+-- print(factorial_iter(3))
 
 -- итеративный лучше если нужно считать большое количество чисел, значений
