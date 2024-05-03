@@ -17,4 +17,3 @@ local function max(i, j)
     return min
 end
 
--- переделать Выразить как в случае с суммой
