@@ -14,7 +14,3 @@ end
 
 print(sum_array(arr)) -- 15
 print(sum_array(arr2)) -- 15
-
-
--- фактические и формальные аргументы
--- ЗАПИСАТь 
