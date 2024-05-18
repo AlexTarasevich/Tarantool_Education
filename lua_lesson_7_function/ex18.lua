@@ -22,4 +22,4 @@ end
 
 
 local numChanges = countChanges(myArray)
-print("Колличество смены знаков : " .. numChanges)
+print("Колличество смены знаков : " .. numChanges) -- 7
