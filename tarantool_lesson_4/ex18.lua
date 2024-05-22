@@ -16,27 +16,26 @@
 box.cfg{ 
     listen = '3301',
     box.info.listen,
-    work_dir = '/Users/a.tarasevich/Lua code/tarantool_lesson_4/dir_a',
-    memtx_dir = '/Users/a.tarasevich/Lua code/tarantool_lesson_4/dir_a/wal',
-    wal_dir = 'wal',
+    work_dir = '/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool_ex18',
+    snap_dir = '/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool_ex18/snap',
+    wal_dir = '/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool_ex18/wal',
 }
 
 local space = box.schema.space.create('test_space')
 
 space:format({
-    {name = 'id', type = 'usignes'},
+    {name = 'id', type = 'integer'},
     {name = 'name', type = 'string'},
     {name = 'value', type = 'number'},
 })
 
 space:create_index('primary', {
-    type = 'TREE',
     parts = {'id'},
     if_not_exists = true,
 })
 
 space:insert({1, 'test1', 42})
-space:insert({1, 'test2', 3455})
+space:insert({2, 'test2', 3455})
 
 local data = space:select()
 
@@ -44,3 +43,4 @@ for i = 1, #data do
     local tuple = data[i]
     print(tuple[1], tuple[2], tuple[3])
 end
+

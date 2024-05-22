@@ -9,9 +9,9 @@
 
 
 box.cfg{
-    listen = '0.0.0.0:3302',
-    work_dir = '/Users/a.tarasevich/Lua code/tarantool_lesson_4',
-    wal_dir = '/Users/a.tarasevich/Lua code/tarantool_lesson_4',
-    snap_dir = '/Users/a.tarasevich/Lua code/tarantool_lesson_4',
+    listen = '0.0.0.0:3301',
+    work_dir = '/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool_ex23',
+    wal_dir = '/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool_ex23/wal',
+    snap_dir = '/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool_ex23/snap',
     memtx_memory = 536870912
 }
