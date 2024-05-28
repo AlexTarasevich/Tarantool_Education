@@ -12,18 +12,18 @@ box.cfg {
 }
 
 -- Display current configuration values
-io.write("listen: ")
-io.write(box.cfg.listen)
-io.write("\n")
+print("listen: ")
+print(box.cfg.listen)
+print("\n")
 
-io.write("work_dir: ")
-io.write(box.cfg.work_dir)
-io.write("\n")
+print("work_dir: ")
+print(box.cfg.work_dir)
+print("\n")
 
-io.write("memtx_dir: ")
-io.write(box.cfg.memtx_dir)
-io.write("\n")
+print("memtx_dir: ")
+print(box.cfg.memtx_dir)
+print("\n")
 
-io.write("wal_dir: ")
-io.write(box.cfg.wal_dir)
-io.write("\n")
+print("wal_dir: ")
+print(box.cfg.wal_dir)
+print("\n")

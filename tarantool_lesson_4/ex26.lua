@@ -4,7 +4,7 @@
 local config = {
     listen = 3301,
     work_dir = "/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool_ex26",
-    snap_dir = "/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool_ex26/snap",
+    memtx_dir = "/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool_ex26/memtx_dir",
     wal_dir = "/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool_ex26/wal",
 }
 

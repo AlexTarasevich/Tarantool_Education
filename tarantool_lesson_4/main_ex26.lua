@@ -3,22 +3,20 @@ local config = require("ex26") -- подключения конфига
 box.cfg(config)
 
 
-io.write("listen: ")
-io.write(box.cfg.listen)
-io.write("\n")
+print("listen: ")
+print(box.cfg.listen)
+print("\n")
 
-io.write("work_dir: ")
-io.write(box.cfg.work_dir)
-io.write("\n")
+print("work_dir: ")
+print(box.cfg.work_dir)
+print("\n")
 
-io.write("wal_dir: ")
-io.write(box.cfg.wal_dir)
-io.write("\n")
+print("wal_dir: ")
+print(box.cfg.wal_dir)
+print("\n")
 
-io.write("snap_dir: ")
-io.write(box.cfg.snap_dir)
-io.write("\n")
+print("memtx_dir: ")
+print(box.cfg.memtx_dir)
+print("\n")
 
 
--- ругается на snap_dir 
---  main_ex26.lua:19: bad argument #1 to 'write' (string expected, got nil)

@@ -12,6 +12,6 @@ box.cfg{
     listen = '0.0.0.0:3301',
     work_dir = '/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool_ex23',
     wal_dir = '/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool_ex23/wal',
-    snap_dir = '/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool_ex23/snap',
+    snapshot = '/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool_ex23/snap_dir',
     memtx_memory = 536870912
 }
