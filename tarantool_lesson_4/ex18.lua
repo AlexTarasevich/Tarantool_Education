@@ -16,9 +16,9 @@
 box.cfg{ 
     listen = '3301',
     box.info.listen,
-    work_dir = '/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool_ex18',
-    snap_dir = '/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool_ex18/snap',
-    wal_dir = '/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool_ex18/wal',
+    work_dir = '/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool.ex18',
+    snap_dir = '/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool.ex18/snap',
+    wal_dir = '/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool.ex18/wal',
 }
 
 local space = box.schema.space.create('test_space')
