@@ -6,9 +6,9 @@
 -- Configure Tarantool
 box.cfg {
     listen = 3301,
-    work_dir = "/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool_ex15",
-    memtx_dir = "/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool_ex15/mem",
-    wal_dir = "/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool_ex15/wal",
+    work_dir = "/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool.ex15",
+    memtx_dir = "/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool.ex15/mem",
+    wal_dir = "/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool.ex15/wal",
 }
 
 -- Display current configuration values

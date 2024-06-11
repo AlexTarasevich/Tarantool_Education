@@ -4,7 +4,7 @@
 
 box.cfg {
     listen = 3301,
-    work_dir = "/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool_ex27"
+    work_dir = "/Users/a.tarasevich/Lua code/tarantool_lesson_4/tarantool.ex27"
     -- memtx_engine_memory = 1024 * 1024 * 1024, -- 1GB
     -- wal_mode = "none", -- Disable WAL for simplicity
 }
